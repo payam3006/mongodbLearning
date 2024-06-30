@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+
+    <body>
+
+        <!-- ///////////ejs/////////// -->
+        <% const name="payam" %>
+            <p>
+                <%= name %>
+            </p>
+
+            <%- include("./partials/nav") %>
+
+                <div class="blogs content">
+                    <h2>All blogs</h2>
+
+                    <% if (blogs.length> 0) { %>
+                        <% blogs.forEach(blog=> { %>
+
+                            <h3 class="title">
+                                <%= blog.title %>
+                            </h3>
+                            <p class="snippet">
+                                <%= blog.snippet %>
+                            </p>
+
+                            <% }) %>
+                                <% } else { %>
+                                    <p>There are no blogs</p>
+                                    <% } %>
+                </div>
+
+                <%- include("./partials/footer") %>
+
+    </body>
+
+</html>
